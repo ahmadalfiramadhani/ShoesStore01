@@ -1,10 +1,95 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Public Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.total {
+  padding: 10px;
+  float: right;
+}
+
+.psn {
+  padding-top: 10px;
+  background-color: rgba(158, 158, 158, 0.096);
+  border-radius: 20px;
+  border: hidden;
+}
+
+.KO {
+  border-radius: 20px;
+  background-color: red;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 80px;
+  margin-bottom: 10px;
+  border: none;
+  width: 10cm;
+}
+
+.fc {
+  border-style: dashed;
+  border-radius: 13px;
+}
+
+.KO:hover {
+  background-color: rgb(255, 0, 0);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.each-slide > div {
+  margin-top: 50px;
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 750px;
+}
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+.navbar {
+  background-color: rgb(48, 48, 48);
+}
+
+.category-aktif {
+  background-color: rgb(48, 48, 48);
+  color: white;
+}
+
+.btn-primary {
+  background-color: rgb(48, 48, 48);
+  border: none;
+}
+
+.btn-danger {
+  background-color: rgb(48, 48, 48);
+  width: 95%;
+  border: none;
+}
+
+@media only screen and (max-height: 1000px) {
+  .hasil {
+    height: 300px;
+  }
+  
+  .menu {
+    height: 500px;
+  }
+}
+
+.overflow-auto::-webkit-scrollbar{
+  display: none;
 }
 
 code {

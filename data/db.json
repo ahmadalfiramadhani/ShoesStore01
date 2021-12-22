@@ -1,0 +1,411 @@
+{
+  "form": [
+    {
+      "nama": "Rizqi",
+      "alamat": "Mangkang",
+      "keterangan": "Ukuran 42",
+      "done": false,
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "nama": "Adidas"
+    },
+    {
+      "id": 2,
+      "nama": "Vans"
+    },
+    {
+      "id": 4,
+      "nama": "Piero"
+    },
+    {
+      "id": 5,
+      "nama": "Puma"
+    },
+    {
+      "id": 6,
+      "nama": "Superga"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "nama": "Adidas Cosmic",
+      "harga": 399000,
+      "is_ready": true,
+      "gambar": "Adidas-cosmic-399.jpeg",
+      "category": {
+        "id": 1,
+        "nama": "Adidas"
+      }
+    },
+    {
+      "id": 2,
+      "nama": "Vans Catur",
+      "harga": 150000,
+      "is_ready": true,
+      "gambar": "vans-catur.jpg",
+      "category": {
+        "id": 2,
+        "nama": "Vans"
+      }
+    },
+    {
+      "id": 4,
+      "nama": "Adidas Sport",
+      "harga": 269000,
+      "is_ready": true,
+      "gambar": "Adidas-sport-269.jpg",
+      "category": {
+        "id": 1,
+        "nama": "Adidas"
+      }
+    },
+    {
+      "id": 5,
+      "nama": "Piero City Core",
+      "harga": 500000,
+      "is_ready": true,
+      "gambar": "piero-city-core.jpg",
+      "category": {
+        "id": 4,
+        "nama": "Piero"
+      }
+    },
+    {
+      "id": 6,
+      "nama": "Puma Raplh",
+      "harga": 400000,
+      "is_ready": true,
+      "gambar": "puma-raplh-400.jpg",
+      "category": {
+        "id": 5,
+        "nama": "Puma"
+      }
+    },
+    {
+      "id": 7,
+      "nama": "Puma Suede",
+      "harga": 260000,
+      "is_ready": true,
+      "gambar": "pumaswede.jpg",
+      "category": {
+        "id": 5,
+        "nama": "Puma"
+      }
+    },
+    {
+      "id": 8,
+      "nama": "Piero Jogger",
+      "harga": 150000,
+      "is_ready": true,
+      "gambar": "piero-jogger-150.jpg",
+      "category": {
+        "id": 4,
+        "nama": "Piero"
+      }
+    },
+    {
+      "id": 9,
+      "nama": "Piero Saga",
+      "harga": 460000,
+      "is_ready": true,
+      "gambar": "piero-saga-460.jpg",
+      "category": {
+        "id": 4,
+        "nama": "Piero"
+      }
+    },
+    {
+      "id": 10,
+      "nama": "Vans Hitam",
+      "harga": 120000,
+      "is_ready": true,
+      "gambar": "vans-hitam.jpeg",
+      "category": {
+        "id": 2,
+        "nama": "Vans"
+      }
+    },
+    {
+      "id": 11,
+      "nama": "Vans Mario Pendek",
+      "harga": 110000,
+      "is_ready": true,
+      "gambar": "vans-mario-pendek.jpg",
+      "category": {
+        "id": 2,
+        "nama": "Vans"
+      }
+    },
+    {
+      "id": 12,
+      "nama": "Adidas SuperStar",
+      "harga": 499000,
+      "is_ready": true,
+      "gambar": "Adidas-superstar-499.jpg",
+      "category": {
+        "id": 1,
+        "nama": "Adidas"
+      }
+    },
+    {
+      "id": 13,
+      "nama": "Adidas Dropset Traines",
+      "harga": 2200000,
+      "is_ready": true,
+      "gambar": "dropset-traines-2200jt.jpg",
+      "category": {
+        "id": 1,
+        "nama": "Adidas"
+      }
+    },
+    {
+      "id": 14,
+      "nama": "Adidas SuperNove Shoes",
+      "harga": 1800000,
+      "is_ready": true,
+      "gambar": "supernove-shoes-1800jt.jpg",
+      "category": {
+        "id": 1,
+        "nama": "Adidas"
+      }
+    },
+    {
+      "id": 15,
+      "nama": "Adidas Superstar 82",
+      "harga": 2400000,
+      "is_ready": true,
+      "gambar": "superstar-82-2400jt.jpg",
+      "category": {
+        "id": 1,
+        "nama": "Adidas"
+      }
+    },
+    {
+      "id": 16,
+      "nama": "Adidas Ultraboost 20",
+      "harga": 3200000,
+      "is_ready": true,
+      "gambar": "ultraboost-20-3200jt.jpg",
+      "category": {
+        "id": 1,
+        "nama": "Adidas"
+      }
+    },
+    {
+      "id": 17,
+      "nama": "Vans Era",
+      "harga": 849000,
+      "is_ready": true,
+      "gambar": "vans-era.jpg",
+      "category": {
+        "id": 2,
+        "nama": "Vans"
+      }
+    },
+    {
+      "id": 18,
+      "nama": "Vans Authentic",
+      "harga": 800000,
+      "is_ready": true,
+      "gambar": "vans-authentic.jpg",
+      "category": {
+        "id": 2,
+        "nama": "Vans"
+      }
+    },
+    {
+      "id": 19,
+      "nama": "Vans Old School",
+      "harga": 1500000,
+      "is_ready": true,
+      "gambar": "vans-old-skool.jpg",
+      "category": {
+        "id": 2,
+        "nama": "Vans"
+      }
+    },
+    {
+      "id": 20,
+      "nama": "Vans Ua Clasik",
+      "harga": 1200000,
+      "is_ready": true,
+      "gambar": "vans-uaclasik.jpg",
+      "category": {
+        "id": 2,
+        "nama": "Vans"
+      }
+    },
+    {
+      "id": 21,
+      "nama": "Piero Onimaru",
+      "harga": 430000,
+      "is_ready": true,
+      "gambar": "ONIMARU.jpg",
+      "category": {
+        "id": 4,
+        "nama": "Piero"
+      }
+    },
+    {
+      "id": 22,
+      "nama": "Piero Teraflex",
+      "harga": 500000,
+      "is_ready": true,
+      "gambar": "TERRAFLEX.jpg",
+      "category": {
+        "id": 4,
+        "nama": "Piero"
+      }
+    },
+    {
+      "id": 23,
+      "nama": "Piero Varta",
+      "harga": 500000,
+      "is_ready": true,
+      "gambar": "verta.jpg",
+      "category": {
+        "id": 4,
+        "nama": "Piero"
+      }
+    },
+    {
+      "id": 24,
+      "nama": "Piero Vx9",
+      "harga": 400000,
+      "is_ready": true,
+      "gambar": "Vx9.jpg",
+      "category": {
+        "id": 4,
+        "nama": "Piero"
+      }
+    },
+    {
+      "id": 25,
+      "nama": "Puma 370367 03",
+      "harga": 750000,
+      "is_ready": true,
+      "gambar": "370367-03-750.jpg",
+      "category": {
+        "id": 5,
+        "nama": "Puma"
+      }
+    },
+    {
+      "id": 26,
+      "nama": "Puma Sepatu OlahRaga",
+      "harga": 120000,
+      "is_ready": true,
+      "gambar": "sepatu-olahraga-120.jpg",
+      "category": {
+        "id": 5,
+        "nama": "Puma"
+      }
+    },
+    {
+      "id": 27,
+      "nama": "Flower Print",
+      "harga": 650000,
+      "is_ready": true,
+      "gambar": "flower_print.jpg",
+      "category": {
+        "id": 6,
+        "nama": "Superga"
+      }
+    },
+    {
+      "id": 28,
+      "nama": "Hi Top 901",
+      "harga": 640000,
+      "is_ready": true,
+      "gambar": "hi_top_901.jpg",
+      "category": {
+        "id": 6,
+        "nama": "Superga"
+      }
+    },
+    {
+      "id": 29,
+      "nama": "OG 901",
+      "harga": 640000,
+      "is_ready": true,
+      "gambar": "og_901.jpg",
+      "category": {
+        "id": 6,
+        "nama": "Superga"
+      }
+    },
+    {
+      "id": 30,
+      "nama": "Pokadots A3Z",
+      "harga": 645000,
+      "is_ready": true,
+      "gambar": "pokadots_a3z.jpg",
+      "category": {
+        "id": 6,
+        "nama": "Superga"
+      }
+    },
+    {
+      "id": 31,
+      "nama": "Print A4H",
+      "harga": 600000,
+      "is_ready": true,
+      "gambar": "print_a4h.jpg",
+      "category": {
+        "id": 6,
+        "nama": "Superga"
+      }
+    },
+    {
+      "id": 32,
+      "nama": "Tank 901",
+      "harga": 900000,
+      "is_ready": true,
+      "gambar": "tank_901.jpg",
+      "category": {
+        "id": 6,
+        "nama": "Superga"
+      }
+    }
+  ],
+  "keranjangs": [
+    {
+      "jumlah": 2,
+      "total_harga": 538000,
+      "product": {
+        "id": 4,
+        "nama": "Adidas Sport",
+        "harga": 269000,
+        "is_ready": true,
+        "gambar": "Adidas-sport-269.jpg",
+        "category": {
+          "id": 1,
+          "nama": "Adidas"
+        }
+      },
+      "id": 1
+    },
+    {
+      "jumlah": 1,
+      "total_harga": 399000,
+      "product": {
+        "id": 1,
+        "nama": "Adidas Cosmic",
+        "harga": 399000,
+        "is_ready": true,
+        "gambar": "Adidas-cosmic-399.jpeg",
+        "category": {
+          "id": 1,
+          "nama": "Adidas"
+        }
+      },
+      "id": 2
+    }
+  ],
+  "pesanans": []
+}
