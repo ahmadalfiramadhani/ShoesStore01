@@ -63,7 +63,7 @@ code {
 }
 
 .category-aktif {
-  background-color: rgb(48, 48, 48);
+  background-color: silver;
   color: white;
 }
 
@@ -80,7 +80,11 @@ code {
 
 @media only screen and (max-height: 1000px) {
   .hasil {
-    height: 300px;
+    height: 400px;
+  }
+
+  .keranjang {
+    height: 315px;
   }
   
   .menu {

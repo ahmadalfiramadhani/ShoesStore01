@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Container, Col } from "react-bootstrap";
-import { Hasil } from "../components";
+import { Hasil, NavbarComponent, Footer } from "../components";
 import Abcd from './Abcd'
 import { API_URL } from "../utils/constants";
 import axios from "axios";
@@ -118,7 +118,9 @@ export default class Home extends Component {
   render() {
     const { keranjangs } = this.state;
     return (
-        <Container fluid style={{ marginTop: "140px" }}>
+      <div>
+        <NavbarComponent />
+        <Container style={{ marginTop: "140px" }}>
             <h2 className="text-center"><b>DETAIL ORDER</b></h2>
           <Row>
             <Col>
@@ -127,7 +129,6 @@ export default class Home extends Component {
                   <Col>
                     <h4>Detail Pembeli</h4>
                     <hr size="5" style={{ color: "black", width: "3cm" }} />
-                    {/* <Tabel /> */}
                     <Abcd />
                   </Col>
                 </div>
@@ -139,6 +140,8 @@ export default class Home extends Component {
               />
           </Row>
         </Container>
+        <Footer />
+        </div>
     );
   }
 }

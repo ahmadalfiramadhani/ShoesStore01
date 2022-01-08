@@ -1,7 +1,7 @@
 import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button, Form, Col, Row } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 
 const ModalKeranjang = ({
@@ -9,13 +9,11 @@ const ModalKeranjang = ({
   handleClose,
   keranjangDetail,
   jumlah,
-  keterangan,
   tambah,
   kurang,
-  changeHandler,
   handleSubmit,
   totalHarga,
-  hapusPesanan
+  hapusPesanan,
 }) => {
   if (keranjangDetail) {
     return (
@@ -30,38 +28,56 @@ const ModalKeranjang = ({
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Total Harga :</Form.Label>
-              <p>
-                <strong>
-                  Rp. {numberWithCommas(totalHarga)}
-                </strong>
-              </p>
-            </Form.Group>
-
+            <Row>
+            <Col>
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Jumlah :</Form.Label>
               <br />
-              <Button variant="dark" size="sm" className="mr-2" onClick={ () => kurang()}>
+              <Button
+                variant="dark"
+                size="sm"
+                className="mr-2"
+                onClick={() => kurang()}
+              >
                 <FontAwesomeIcon icon={faMinus} />
-              </Button> 
+              </Button>
 
-              <strong> {jumlah} </strong> 
-              
-              <Button variant="dark" size="sm" className="ml-2" onClick={ () => tambah()}>
+              <strong> {jumlah} </strong>
+
+              <Button
+                variant="dark"
+                size="sm"
+                className="ml-2"
+                onClick={() => tambah()}
+              >
                 <FontAwesomeIcon icon={faPlus} />
               </Button>
             </Form.Group>
+            </Col>
+            <Col style={{marginLeft:"56px"}}>
+            <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Label>Total Harga :</Form.Label>
+              <p>
+                <strong>Rp. {numberWithCommas(totalHarga)}</strong>
+              </p>
+            </Form.Group>
+            </Col>
+            </Row>
             <br />
             <Button variant="dark" type="submit">
-                Simpan
-            </Button>   
+              Simpan
+            </Button>
+            <Button
+            style={{float:"right"}}
+            variant="dark"
+            onClick={() => hapusPesanan(keranjangDetail.id)}
+          >
+            <FontAwesomeIcon icon={faTrash} /> Hapus Pesanan
+          </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="dark" onClick={() => hapusPesanan(keranjangDetail.id)}>
-            <FontAwesomeIcon icon={faTrash} /> Hapus Pesanan
-          </Button>
+        <strong>{keranjangDetail.product.nama}</strong>
         </Modal.Footer>
       </Modal>
     );

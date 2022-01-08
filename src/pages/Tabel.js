@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
+import { API_URL } from '../utils/constants'
 
 const TodoItem = ({ setRefresh, isRefresh }) => {
   const [Form, setform] = useState([]);
   useEffect(() => {
     if (isRefresh) {
-      fetch("http://localhost:3004/form")
+      fetch(API_URL + "pesanans/")
         .then((res) => {
           return res.json();
         })
@@ -38,7 +39,7 @@ const TodoItem = ({ setRefresh, isRefresh }) => {
               </p>
             </Col>
             <Col>
-              <p style={{ float: "right" }}>{todos.nama}</p>
+              <p style={{ float: "right" }}>{todos.user}</p>
             </Col>
           </Row>
           <Row>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Container } from "react-bootstrap";
-import { Hasil2 } from "../components";
+import { Hasil2, NavbarComponent, Footer } from "../components";
 import { API_URL } from "../utils/constants";
 import axios from "axios";
 import swal from "sweetalert";
@@ -117,6 +117,8 @@ export default class Home extends Component {
   render() {
     const { keranjangs } = this.state;
     return (
+      <div>
+        <NavbarComponent />
         <Container fluid style={{ marginTop: "140px" }}>
           <Row>
               <Hasil2
@@ -126,6 +128,8 @@ export default class Home extends Component {
               />
           </Row>
         </Container>
+        <Footer />
+        </div>
     );
   }
 }

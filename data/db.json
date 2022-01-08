@@ -1,11 +1,9 @@
 {
-  "form": [
+  "users": [
     {
-      "nama": "Rizqi",
-      "alamat": "Mangkang",
-      "keterangan": "Ukuran 42",
-      "done": false,
-      "id": 1
+      "id": 1,
+      "nama": "ShoesStore",
+      "deskripsi": "Selamat Datang Di Toko Kami,Disini anda dapat memilih,melihat,membeli berbagai macam sepatu. Dengan harga yang cukup terjangkau sesuai kelebihan bahan sepatu."
     }
   ],
   "categories": [
@@ -375,8 +373,24 @@
   ],
   "keranjangs": [
     {
-      "jumlah": 2,
-      "total_harga": 538000,
+      "jumlah": 1,
+      "total_harga": 2200000,
+      "product": {
+        "id": 13,
+        "nama": "Adidas Dropset Traines",
+        "harga": 2200000,
+        "is_ready": true,
+        "gambar": "dropset-traines-2200jt.jpg",
+        "category": {
+          "id": 1,
+          "nama": "Adidas"
+        }
+      },
+      "id": 6
+    },
+    {
+      "jumlah": 1,
+      "total_harga": 269000,
       "product": {
         "id": 4,
         "nama": "Adidas Sport",
@@ -388,11 +402,11 @@
           "nama": "Adidas"
         }
       },
-      "id": 1
+      "id": 7
     },
     {
-      "jumlah": 1,
-      "total_harga": 399000,
+      "jumlah": 2,
+      "total_harga": 798000,
       "product": {
         "id": 1,
         "nama": "Adidas Cosmic",
@@ -404,8 +418,278 @@
           "nama": "Adidas"
         }
       },
-      "id": 2
+      "id": 8
+    },
+    {
+      "jumlah": 2,
+      "total_harga": 300000,
+      "product": {
+        "id": 2,
+        "nama": "Vans Catur",
+        "harga": 150000,
+        "is_ready": true,
+        "gambar": "vans-catur.jpg",
+        "category": {
+          "id": 2,
+          "nama": "Vans"
+        }
+      },
+      "id": 9
+    },
+    {
+      "jumlah": 1,
+      "total_harga": 120000,
+      "product": {
+        "id": 10,
+        "nama": "Vans Hitam",
+        "harga": 120000,
+        "is_ready": true,
+        "gambar": "vans-hitam.jpeg",
+        "category": {
+          "id": 2,
+          "nama": "Vans"
+        }
+      },
+      "id": 10
+    },
+    {
+      "jumlah": 1,
+      "total_harga": 110000,
+      "product": {
+        "id": 11,
+        "nama": "Vans Mario Pendek",
+        "harga": 110000,
+        "is_ready": true,
+        "gambar": "vans-mario-pendek.jpg",
+        "category": {
+          "id": 2,
+          "nama": "Vans"
+        }
+      },
+      "id": 11
+    },
+    {
+      "jumlah": 2,
+      "total_harga": 1698000,
+      "product": {
+        "id": 17,
+        "nama": "Vans Era",
+        "harga": 849000,
+        "is_ready": true,
+        "gambar": "vans-era.jpg",
+        "category": {
+          "id": 2,
+          "nama": "Vans"
+        }
+      },
+      "id": 12
     }
   ],
-  "pesanans": []
+  "pesanans": [
+    {
+      "user": "Slayer",
+      "alamat": "Underworld",
+      "keterangan": "Kasih Merica 3 Sendok",
+      "done": false,
+      "id": 1
+    },
+    {
+      "total_bayar": 410194000,
+      "menus": [
+        {
+          "jumlah": 50,
+          "total_harga": 160000000,
+          "product": {
+            "id": 16,
+            "nama": "Adidas Ultraboost 20",
+            "harga": 3200000,
+            "is_ready": true,
+            "gambar": "ultraboost-20-3200jt.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Adidas"
+            }
+          },
+          "id": 1
+        },
+        {
+          "jumlah": 100,
+          "total_harga": 240000000,
+          "product": {
+            "id": 15,
+            "nama": "Adidas Superstar 82",
+            "harga": 2400000,
+            "is_ready": true,
+            "gambar": "superstar-82-2400jt.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Adidas"
+            }
+          },
+          "id": 2
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 2400000,
+          "product": {
+            "id": 15,
+            "nama": "Adidas Superstar 82",
+            "harga": 2400000,
+            "is_ready": true,
+            "gambar": "superstar-82-2400jt.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Adidas"
+            }
+          },
+          "id": 3
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 1800000,
+          "product": {
+            "id": 14,
+            "nama": "Adidas SuperNove Shoes",
+            "harga": 1800000,
+            "is_ready": true,
+            "gambar": "supernove-shoes-1800jt.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Adidas"
+            }
+          },
+          "id": 4
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 499000,
+          "product": {
+            "id": 12,
+            "nama": "Adidas SuperStar",
+            "harga": 499000,
+            "is_ready": true,
+            "gambar": "Adidas-superstar-499.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Adidas"
+            }
+          },
+          "id": 5
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 2200000,
+          "product": {
+            "id": 13,
+            "nama": "Adidas Dropset Traines",
+            "harga": 2200000,
+            "is_ready": true,
+            "gambar": "dropset-traines-2200jt.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Adidas"
+            }
+          },
+          "id": 6
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 269000,
+          "product": {
+            "id": 4,
+            "nama": "Adidas Sport",
+            "harga": 269000,
+            "is_ready": true,
+            "gambar": "Adidas-sport-269.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Adidas"
+            }
+          },
+          "id": 7
+        },
+        {
+          "jumlah": 2,
+          "total_harga": 798000,
+          "product": {
+            "id": 1,
+            "nama": "Adidas Cosmic",
+            "harga": 399000,
+            "is_ready": true,
+            "gambar": "Adidas-cosmic-399.jpeg",
+            "category": {
+              "id": 1,
+              "nama": "Adidas"
+            }
+          },
+          "id": 8
+        },
+        {
+          "jumlah": 2,
+          "total_harga": 300000,
+          "product": {
+            "id": 2,
+            "nama": "Vans Catur",
+            "harga": 150000,
+            "is_ready": true,
+            "gambar": "vans-catur.jpg",
+            "category": {
+              "id": 2,
+              "nama": "Vans"
+            }
+          },
+          "id": 9
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 120000,
+          "product": {
+            "id": 10,
+            "nama": "Vans Hitam",
+            "harga": 120000,
+            "is_ready": true,
+            "gambar": "vans-hitam.jpeg",
+            "category": {
+              "id": 2,
+              "nama": "Vans"
+            }
+          },
+          "id": 10
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 110000,
+          "product": {
+            "id": 11,
+            "nama": "Vans Mario Pendek",
+            "harga": 110000,
+            "is_ready": true,
+            "gambar": "vans-mario-pendek.jpg",
+            "category": {
+              "id": 2,
+              "nama": "Vans"
+            }
+          },
+          "id": 11
+        },
+        {
+          "jumlah": 2,
+          "total_harga": 1698000,
+          "product": {
+            "id": 17,
+            "nama": "Vans Era",
+            "harga": 849000,
+            "is_ready": true,
+            "gambar": "vans-era.jpg",
+            "category": {
+              "id": 2,
+              "nama": "Vans"
+            }
+          },
+          "id": 12
+        }
+      ],
+      "id": 2
+    }
+  ]
 }

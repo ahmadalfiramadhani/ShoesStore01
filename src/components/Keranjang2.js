@@ -1,36 +1,3 @@
-// import React, { Component } from "react";
-// import { Col, Row, Form, FloatingLabel } from "react-bootstrap";
-
-// export default class DetailPemesan extends Component {
-//   render() {
-//     return (
-//       <Col>
-//         <h4>Detail Pemesan</h4>
-//         <hr
-//           size="5"
-//           style={{
-//             color: "red",
-//             width: "4cm",
-//             borderRadius: "50",
-//           }}
-//         />
-//         <Row className="g-2">
-//           <Col md>
-//             <FloatingLabel controlId="floatingInputGrid" label="Nama Anda">
-//               <Form.Control type="email" placeholder="Tulis Nama Anda" />
-//             </FloatingLabel>
-//           </Col>
-//           <Col md>
-//             <FloatingLabel controlId="floatingInputGrid" label="No. Meja">
-//               <Form.Control type="email" placeholder="Pilih No. Meja" />
-//             </FloatingLabel>
-//           </Col>
-//         </Row>
-//       </Col>
-//     );
-//   }
-// }
-
 import React, { Component } from "react";
 import Abc from "./Abc";
 import { Col, Row, Card, Container } from "react-bootstrap";
@@ -174,20 +141,24 @@ export default class DetailPemesan extends Component {
                   <div style={{ margin: "10px" }}>
                     <Col>
                       <h4>Order Anda</h4>
-                      <hr size="5" style={{ color: "black", width: "3cm" }} />
-                      <Card className="order" style={{ border: "hidden" }}>
+                      <hr size="5" style={{ color: "black", width: "3.1cm" }} />
+                      <Card
+                        className="overflow-auto keranjang"
+                        style={{ border: "hidden" }}
+                      >
                         <Card.Header
+                          className="sticky-top"
                           style={{
-                            backgroundColor: "rgba(158, 158, 158, 0.096)",
+                            backgroundColor: "white",
                           }}
                         >
                           <Row>
-                            <Col className=" mt-4 total">
+                            <Col className=" mt-2 total">
                               <h4>
                                 <b>Menu</b>
                               </h4>
                             </Col>
-                            <Col className=" mt-4 total">
+                            <Col className=" mt-2 total">
                               <h4 style={{ float: "right" }}>
                                 <b>Total</b>
                               </h4>
@@ -218,19 +189,26 @@ export default class DetailPemesan extends Component {
                             </Row>
                           </Card.Body>
                         ))}
+                      </Card>
+                      <Card>
                         <Card.Footer
+                          className="sticky"
                           style={{
-                            backgroundColor: "rgba(158, 158, 158, 0.096)",
+                            backgroundColor: "white",
                           }}
                         >
                           <Row>
-                            <Col>
+                            <Col
+                              style={{
+                                paddingTop: "10px",
+                              }}
+                            >
                               <p>
                                 <b>Total Harga: </b>
                               </p>
                             </Col>
                             <Col>
-                              <p style={{ float: "right" }}>
+                              <p style={{ float: "right", paddingTop: "10px" }}>
                                 <b>Rp. {numberWithCommas(totalBayar)}</b>
                               </p>
                             </Col>
@@ -238,26 +216,6 @@ export default class DetailPemesan extends Component {
                         </Card.Footer>
                       </Card>
                     </Col>
-                    {/* <a href="/TabelOrder">
-                    <Button
-                    style={{marginLeft:"79%", width:"110px"}}
-                      className="mt-3 btn"
-                      size="md"
-                      variant="dark"
-                    >
-                      <strong>BACK</strong>
-                    </Button>
-                    </a>
-                    <a href="/OrderSelesai">
-                    <Button
-                    style={{marginLeft:"79%", width:"110px"}}
-                      className="mt-3 btn"
-                      size="md"
-                      variant="dark"
-                    >
-                      <strong>NEXT</strong>
-                    </Button>
-                    </a> */}
                   </div>
                 </Col>
               )}

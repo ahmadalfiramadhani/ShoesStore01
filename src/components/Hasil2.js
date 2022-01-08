@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Col, Table } from "react-bootstrap";
+import { Card, Col, Table, Container } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 import ModalKeranjang from "./ModalKeranjang";
 import TotalBayar1 from "./TotalBayar1";
@@ -113,63 +113,60 @@ export default class Hasil extends Component {
   render() {
     const { keranjangs } = this.props;
     return (
-      <Col
-        md={3}
-        className="mt-3"
-        style={{ width: "1100px", marginLeft: "110px" }}
-      >
-        <h2 className="text-center">
-          <strong>Pesanan Anda</strong>
-        </h2>
-        <hr />
-        {keranjangs.length !== 0 && (
-          <Card className="hasil">
-            <Table
-              className="text-center"
-              striped
-              bordered
-              hover
-              variant="dark"
-            >
-              <thead>
-                <tr>
-                  <th>Nama Produk</th>
-                  <th>Jumlah</th>
-                  <th>Harga</th>
-                  <th>Sub Total</th>
-                </tr>
-              </thead>
-              {keranjangs.map((menuKeranjang) => (
-                <tbody>
-                  <tr
-                    key={menuKeranjang.id}
-                    onClick={() => this.handleShow(menuKeranjang)}
-                  >
-                    <td>{menuKeranjang.product.nama}</td>
-                    <td>
-                        {menuKeranjang.jumlah}
-                    </td>
-                    <td>Rp. {numberWithCommas(menuKeranjang.product.harga)}</td>
-                    <td>Rp. {numberWithCommas(menuKeranjang.total_harga)}</td>
-                  </tr>
-                </tbody>
-              ))}
-            </Table>
+       <div className="mt-3">
+       <Container>
+         <Col
+       >
+         <h2 className="text-center">
+           <strong>Pesanan Anda</strong>
+         </h2>
+         <hr />
+         {keranjangs.length !== 0 && (
+           <Card className="overflow-auto hasil">
+             <Table
+               className="text-center"
+               striped
+               hover
+             >
+               <thead className="sticky-top" style={{backgroundColor:"rgb(71, 71, 71)", color:"white"}}>
+                 <tr>
+                   <th>Nama Produk</th>
+                   <th>Jumlah</th>
+                   <th>Harga</th>
+                   <th>Total Belanja</th>
+                 </tr>
+               </thead>
+               {keranjangs.map((menuKeranjang) => (
+                 <tbody>
+                   <tr
+                     key={menuKeranjang.id}
+                     onClick={() => this.handleShow(menuKeranjang)}
+                   >
+                     <td><b>{menuKeranjang.product.nama}</b></td>
+                     <td><b>{menuKeranjang.jumlah}</b></td>
+                     <td><b>Rp. {numberWithCommas(menuKeranjang.product.harga)}</b></td>
+                     <td><b>Rp. {numberWithCommas(menuKeranjang.total_harga)}</b></td>
+                   </tr>
+                   </tbody>
+               ))}
+             </Table>
 
-            <ModalKeranjang
-              handleClose={this.handleClose}
-              {...this.state}
-              tambah={this.tambah}
-              kurang={this.kurang}
-              changeHandler={this.changeHandler}
-              handleSubmit={this.handleSubmit}
-              hapusPesanan={this.hapusPesanan}
-            />
-          </Card>
-        )}
+             <ModalKeranjang
+               handleClose={this.handleClose}
+               {...this.state}
+               tambah={this.tambah}
+               kurang={this.kurang}
+               changeHandler={this.changeHandler}
+               handleSubmit={this.handleSubmit}
+               hapusPesanan={this.hapusPesanan}
+             />
+           </Card>
+         )}
 
-        <TotalBayar1 keranjangs={keranjangs} {...this.props} />
-      </Col>
+         <TotalBayar1 keranjangs={keranjangs} {...this.props} />
+       </Col>
+       </Container>
+     </div>
     );
   }
 }

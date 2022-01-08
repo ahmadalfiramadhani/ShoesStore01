@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import { Navbar, Container, Nav, Button } from "react-bootstrap";
-import Judul from './Judul'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import "../assets/css/Sidebar.css";
+import { Button, Container, Card } from "react-bootstrap";
+// import FormSett from "./FormSett";
+import Tab from "./Tab";
+import Navbar from "./Navbar";
+import swal from "sweetalert";
 
 const apiURL = "http://localhost:3004/users/";
 
-class NavbarComponent extends Component {
+class Crud extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -139,6 +141,13 @@ class NavbarComponent extends Component {
   HendelSimpan = () => {
     if (this.state.isUpdate) {
       this.UpdateDataUser();
+      swal({
+        title: "Sukses DiRubah",
+        text: "Succes Full ",
+        icon: "success",
+        button: false,
+        timer: 1500,
+      });
     } else {
       this.SaveNewDataUSer();
     }
@@ -153,49 +162,73 @@ class NavbarComponent extends Component {
   };
 
   render() {
-  return (
-    <Navbar variant="dark" bg="dark" expand="lg" className="fixed-top">
-      <Container>
-        <Navbar.Brand href="/">
-          <strong>靴ファンタジー</strong>
-          <br />
-          {this.state.dataUser.map((dataUser) => {
-              return (
-                <Judul
-                  key={dataUser.id}
-                  data={dataUser}
-                  update={this.HendelUpdate} // Pemanggilan Hendel Update
-                />
-              );
-            })}
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/"></Nav.Link>
-          </Nav>
-          <Nav style={{ marginLeft: "20px" }}>
-            <a href="/TabelOrder">
-              <Button
-                variant="outline-light"
-                style={{ padding: "10px", borderRadius: "10px" }}
-              >
-                <FontAwesomeIcon icon={faShoppingCart} /> Cart Orderan
-              </Button>
-            </a>
-            <a href="/Login">
-              <Button
-                variant="outline-light"
-                style={{ padding: "10px", borderRadius: "10px", width:"100px" }}
-              >
-                Login
-              </Button>
-            </a>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-};
+    return (
+      <div className="body main">
+        <Navbar />
+        <Container>
+          <main className="mt-5 pt-3">
+            <div className="row">
+              <Card className="row">
+                <div className="col-md-7 mt-3">
+                  <h4>
+                    <center>
+                      <strong>Setting App</strong>
+                      <hr />
+                    </center>
+                  </h4>
+                  <form>
+                    <div className="form-group mb-1">
+                      <label htmlFor="text">Nama Toko </label>
+                      <input
+                        className="form-control"
+                        placeholder="Nama Toko..."
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        onChange={this.HendelOnchange}
+                        value={this.state.DataUserNew.nama}
+                      />
+                    </div>
+                    <div className="form-group mb-3">
+                      <label>Deskripsi</label>
+                      <input
+                        className="form-control"
+                        placeholder="Deskripsi..."
+                        id="deskripsi"
+                        name="deskripsi"
+                        onChange={this.HendelOnchange}
+                        value={this.state.DataUserNew.deskripsi}
+                      />
+                    </div>
+                    <Button
+                      variant="outline-dark"
+                      type="submit"
+                      style={{
+                        padding: "5px",
+                        borderRadius: "10px",
+                        float: "right",
+                      }}
+                      onClick={this.HendelSimpan}
+                    >
+                      <strong>Simpan</strong>
+                    </Button>
+                    {this.state.dataUser.map((dataUser) => {
+                      return (
+                        <Tab
+                          key={dataUser.id}
+                          data={dataUser}
+                          update={this.HendelUpdate} // Pemanggilan Hendel Update
+                        />
+                      );
+                    })}
+                  </form>
+                </div>
+              </Card>
+            </div>
+          </main>
+        </Container>
+      </div>
+    );
+  }
 }
-export default NavbarComponent;
+export default Crud;

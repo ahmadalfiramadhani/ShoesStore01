@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Container } from "react-bootstrap";
-import { ListCategories, Menus } from "../components";
+import { ListCategories, Menus, NavbarComponent, Footer } from "../components";
 import { API_URL } from "../utils/constants"
 import SlideShow from "./SlideShow";
 import axios from "axios";
@@ -30,20 +30,6 @@ export default class Home extends Component {
 
     this.update();
   }
-
-  // componentDidUpdate(prevState) {
-  // if (this.state.keranjangs !== prevState.keranjangs) {
-  // axios
-  // .get(API_URL + "keranjangs")
-  // .then((res) => {
-  // const keranjangs = res.data;
-  // this.setState({ keranjangs });
-  // })
-  // .catch((error) => {
-  // console.log("Error yaa ", error);
-  // });
-  // }
-  // }
 
   update = () => {
     axios
@@ -132,9 +118,11 @@ export default class Home extends Component {
   render() {
     const { menus, categoriYangDipilih } = this.state;
     return (
+      <div>
+      <NavbarComponent />
       <div className="mt-3">
         <SlideShow />
-        <Container fluid>
+        <Container>
           <Row>
             <ListCategories
               changeCategory={this.changeCategory}
@@ -163,6 +151,8 @@ export default class Home extends Component {
             /> */}
           </Row>
         </Container>
+      </div>
+        <Footer />
       </div>
     );
   }

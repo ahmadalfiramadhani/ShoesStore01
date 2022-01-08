@@ -2,7 +2,7 @@ import React from "react";
 
 const SlideShow = () => {
   return (
-    <div>
+    <div className="container-xxl mt-5">
       <div
         id="carouselExampleFade"
         class="carousel slide carousel-fade"

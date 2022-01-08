@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
-import { Keranjang2 } from "../components";
+import { Keranjang2, NavbarComponent, Footer } from "../components";
 import { API_URL } from "../utils/constants";
 import axios from "axios";
 import swal from "sweetalert";
@@ -131,6 +131,8 @@ export default class Home extends Component {
   render() {
     const { keranjangs } = this.state;
     return (
+      <div>
+        <NavbarComponent />
       <div className="mt-3" style={{ marginTop: "140px" }}>
         <Container>
           <Keranjang2
@@ -139,6 +141,8 @@ export default class Home extends Component {
             update={this.update}
           />
         </Container>
+      </div>
+      <Footer />
       </div>
     );
   }

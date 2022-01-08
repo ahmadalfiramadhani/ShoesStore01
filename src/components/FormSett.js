@@ -1,12 +1,11 @@
+// import { useState } from "react";
 import React, { Component } from "react";
-import { Navbar, Container, Nav, Button } from "react-bootstrap";
-import Judul from './Judul'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { Form, Col, Row, Button, Card } from "react-bootstrap";
+// import { API_URL } from "../utils/constants";
 
 const apiURL = "http://localhost:3004/users/";
 
-class NavbarComponent extends Component {
+class Crud extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +22,8 @@ class NavbarComponent extends Component {
         // untuk Tampung data Update / New data
         id: 1,
         nama: "",
-        deskripsi: "",
+        alamat: "",
+        telpon: "",
       },
     };
   }
@@ -121,7 +121,8 @@ class NavbarComponent extends Component {
       DataUserNew: {
         id: 1,
         nama: "",
-        deskripsi: "",
+        alamat: "",
+        telpon: "",
       },
     });
 
@@ -153,49 +154,52 @@ class NavbarComponent extends Component {
   };
 
   render() {
-  return (
-    <Navbar variant="dark" bg="dark" expand="lg" className="fixed-top">
-      <Container>
-        <Navbar.Brand href="/">
-          <strong>靴ファンタジー</strong>
-          <br />
-          {this.state.dataUser.map((dataUser) => {
-              return (
-                <Judul
-                  key={dataUser.id}
-                  data={dataUser}
-                  update={this.HendelUpdate} // Pemanggilan Hendel Update
-                />
-              );
-            })}
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/"></Nav.Link>
-          </Nav>
-          <Nav style={{ marginLeft: "20px" }}>
-            <a href="/TabelOrder">
-              <Button
-                variant="outline-light"
-                style={{ padding: "10px", borderRadius: "10px" }}
-              >
-                <FontAwesomeIcon icon={faShoppingCart} /> Cart Orderan
-              </Button>
-            </a>
-            <a href="/Login">
-              <Button
-                variant="outline-light"
-                style={{ padding: "10px", borderRadius: "10px", width:"100px" }}
-              >
-                Login
-              </Button>
-            </a>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-};
+    return (
+      <div>
+        <Card style={{ borderRadius: "15px" }}>
+          <Col style={{ marginTop: "10px", padding: "15px" }}>
+            <h4>Informasi Toko</h4>
+            <hr
+              size="5"
+              style={{
+                color: "black",
+                width: "4cm",
+                borderRadius: "50",
+              }}
+            />
+            <Row className="g-2">
+              <Col md>
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                  <Form.Label>Nama Toko</Form.Label>
+                  <Form.Control
+                    type="text"
+                    id="nama"
+                    placeholder="Nama.."
+                    name="nama"
+                    onChange={this.HendelOnchange}
+                    value={this.state.DataUserNew.nama}
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Button
+                  style={{ float: "right", width: "110px" }}
+                  className="mt-3 btn"
+                  size="md"
+                  type="submit"
+                  onClick={this.HendelSimpan}
+                  variant="dark"
+                >
+                  <strong>SIMPAN</strong>
+                </Button>
+              </Col>
+            </Row>
+          </Col>
+        </Card>
+      </div>
+    );
+  }
 }
-export default NavbarComponent;
+export default Crud;
