@@ -270,14 +270,6 @@ class Crud extends Component {
                         </a>
                       </li>
                       <li>
-                        <a href="/Data" className="nav-link px-3">
-                          <span className="me-2">
-                            <i class="bi bi-dash-circle"></i>
-                          </span>
-                          <span>Data Pembeli</span>
-                        </a>
-                      </li>
-                      <li>
                         <a href="/Kategori" className="nav-link px-3">
                           <span className="me-2">
                             <i class="bi bi-dash-circle"></i>

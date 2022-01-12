@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import Footer from "./components/Footer";
 import Dashbor from "./components/Dashbor";
 import Setting from "./components/Setting";
-import Data from "./components/Data";
 import Kontak from "./components/Kontak";
 import Menu from "./components/Menu";
 import TambahProduc from "./components/TambahProduc";
@@ -33,7 +32,6 @@ export default class App extends Component {
             <Route path="/Login" component={Login} exact />
             <Route path="/Dashbor" component={Dashbor} exact />
             <Route path="/Setting" component={Setting} exact />
-            <Route path="/Data" component={Data} exact />
             <Route path="/Kontak" component={Kontak} exact />
             <Route path="/Menu" component={Menu} exact />
             <Route path="/Kategori" component={Kategori} exact />
