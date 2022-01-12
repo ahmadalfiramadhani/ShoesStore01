@@ -178,18 +178,20 @@ class NavbarComponent extends Component {
             <a href="/TabelOrder">
               <Button
                 variant="outline-light"
-                style={{ padding: "10px", borderRadius: "10px" }}
+                style={{ padding: "10px", borderRadius: "10px", marginTop: "12px" }}
               >
                 <FontAwesomeIcon icon={faShoppingCart} /> Cart Orderan
               </Button>
             </a>
-            <a href="/Login">
+            {/* <a href="/Login">
               <Button
                 variant="outline-light"
-                style={{ padding: "10px", borderRadius: "10px", width:"100px" }}
-              >
-                Login
+                style={{ padding: "10px", borderRadius: "10px", width:"85px" }}
+              ><i class="bi bi-person-circle"></i> Login
               </Button>
+            </a> */}
+    <a href="/Login">
+            <i style={{fontSize: "45px", marginLeft: "5px"}} class="bi bi-person-circle text-white"></i>
             </a>
           </Nav>
         </Navbar.Collapse>

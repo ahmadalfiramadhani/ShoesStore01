@@ -262,11 +262,11 @@ class Crud extends Component {
                   <div className="collapse" id="layouts">
                     <ul className="navbar-nav ps-3">
                       <li>
-                        <a href="/#" className="nav-link px-3">
+                        <a href="/TambahProduc" className="nav-link px-3">
                           <span className="me-2">
                             <i class="bi bi-dash-circle"></i>
                           </span>
-                          <span>Tambah Produc</span>
+                          <span>Tambah Produk</span>
                         </a>
                       </li>
                       <li>
@@ -282,7 +282,7 @@ class Crud extends Component {
                           <span className="me-2">
                             <i class="bi bi-dash-circle"></i>
                           </span>
-                          <span>Produc</span>
+                          <span>Produk</span>
                         </a>
                       </li>
                     </ul>
@@ -306,19 +306,6 @@ class Crud extends Component {
                 </li>
                 <li className="my-4">
                   <hr className="dropdown-divider bg-light" />
-                </li>
-                <li>
-                  <div className="text-muted small fw-bold text-uppercase px-3 mb-3 fs-6">
-                    ADDITIONAL
-                  </div>
-                </li>
-                <li>
-                  <a href="/#" className="nav-link px-3 active">
-                    <span className="me-2">
-                      <i class="bi bi-wifi"></i>
-                    </span>
-                    <span>Social Media</span>
-                  </a>
                 </li>
               </ul>
             </nav>

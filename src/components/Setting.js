@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../assets/css/Sidebar.css";
-import { Button, Container, Card } from "react-bootstrap";
 // import FormSett from "./FormSett";
+import { Button, Container, Form, Row, Col } from "react-bootstrap";
 import Tab from "./Tab";
 import Navbar from "./Navbar";
 import swal from "sweetalert";
@@ -142,7 +142,7 @@ class Crud extends Component {
     if (this.state.isUpdate) {
       this.UpdateDataUser();
       swal({
-        title: "Sukses DiRubah",
+        title: "Sukses Di Perbaharui",
         text: "Succes Full ",
         icon: "success",
         button: false,
@@ -168,62 +168,85 @@ class Crud extends Component {
         <Container>
           <main className="mt-5 pt-3">
             <div className="row">
-              <Card className="row">
-                <div className="col-md-7 mt-3">
+              <Container className="row">
+                <div className=" mt-3">
                   <h4>
                     <center>
                       <strong>Setting App</strong>
                       <hr />
                     </center>
                   </h4>
-                  <form>
-                    <div className="form-group mb-1">
-                      <label htmlFor="text">Nama Toko </label>
-                      <input
-                        className="form-control"
-                        placeholder="Nama Toko..."
-                        type="text"
-                        id="nama"
-                        name="nama"
-                        onChange={this.HendelOnchange}
-                        value={this.state.DataUserNew.nama}
-                      />
-                    </div>
-                    <div className="form-group mb-3">
-                      <label>Deskripsi</label>
-                      <input
-                        className="form-control"
-                        placeholder="Deskripsi..."
-                        id="deskripsi"
-                        name="deskripsi"
-                        onChange={this.HendelOnchange}
-                        value={this.state.DataUserNew.deskripsi}
-                      />
-                    </div>
-                    <Button
-                      variant="outline-dark"
-                      type="submit"
-                      style={{
-                        padding: "5px",
-                        borderRadius: "10px",
-                        float: "right",
-                      }}
-                      onClick={this.HendelSimpan}
+                  <Form>
+                    <Form.Group
+                      as={Row}
+                      className="mb-3"
+                      controlId="formHorizontalPassword"
                     >
-                      <strong>Simpan</strong>
-                    </Button>
-                    {this.state.dataUser.map((dataUser) => {
-                      return (
-                        <Tab
-                          key={dataUser.id}
-                          data={dataUser}
-                          update={this.HendelUpdate} // Pemanggilan Hendel Update
+                      <Form.Label column sm={2}>
+                        <strong>Nama App</strong>
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control
+                          required
+                          placeholder="Nama App..."
+                          type="text"
+                          id="nama"
+                          name="nama"
+                          onChange={this.HendelOnchange}
+                          value={this.state.DataUserNew.nama}
                         />
-                      );
-                    })}
-                  </form>
+                      </Col>
+                    </Form.Group>
+                    <Form.Group
+                      as={Row}
+                      className="mb-3"
+                      controlId="formHorizontalEmail"
+                    >
+                      <Form.Label column sm={2}>
+                        <strong>Deskripsi</strong>
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control
+                          as="textarea"
+                          required
+                          placeholder="Deskripsi..."
+                          id="deskripsi"
+                          name="deskripsi"
+                          onChange={this.HendelOnchange}
+                          value={this.state.DataUserNew.deskripsi}
+                        />
+                      </Col>
+                    </Form.Group>
+
+                    <Form.Group as={Row} className="mb-3">
+                      <Col sm={{ span: 10, offset: 2 }}>
+                        <Button
+                          variant="primary"
+                          type="submit"
+                          style={{
+                            width: "100px",
+                            padding: "10px",
+                            borderRadius: "10px",
+                            float: "right",
+                          }}
+                          onClick={this.HendelSimpan}
+                        >
+                          <strong>Simpan</strong>
+                        </Button>
+                        {this.state.dataUser.map((dataUser) => {
+                          return (
+                            <Tab
+                              key={dataUser.id}
+                              data={dataUser}
+                              update={this.HendelUpdate} // Pemanggilan Hendel Update
+                            />
+                          );
+                        })}
+                      </Col>
+                    </Form.Group>
+                  </Form>
                 </div>
-              </Card>
+              </Container>
             </div>
           </main>
         </Container>

@@ -1,6 +1,8 @@
 import React from "react";
 import "../assets/css/Sidebar.css";
-import Navbar from './Navbar'
+import Navbar from "./Navbar";
+// import Slide from "../pages/Slide";
+
 
 function Nav() {
   return (
@@ -10,13 +12,12 @@ function Nav() {
       {/* Content*/}
       <main className="mt-5 pt-3">
         <div className="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item active" aria-current="page">
-                <strong>Products</strong>
-              </li>
-            </ol>
-          </nav>
+          {/* <Slide /> */}
+          <h3>
+            <center>
+              <strong>Dashboard</strong>
+            </center>
+          </h3>
           <div className="row">
             <div className="col-md-3 mb-3">
               <div className="card">
@@ -28,7 +29,7 @@ function Nav() {
                     src="https://www.transparentpng.com/thumb/adidas-logo/png-photo-adidas-logo-hd-6.png"
                   />
                 </div>
-                <a href="/">
+                <a href="/Adidas">
                   <div
                     className="card-footer d-flex"
                     style={{ cursor: "pointer" }}
@@ -51,7 +52,7 @@ function Nav() {
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4DCP-wyMlhgTms3FZgZ58Xi5Lds4aHZIy2g&usqp=CAU"
                   />
                 </div>
-                <a href="/">
+                <a href="/Vans">
                   <div
                     className="card-footer d-flex"
                     style={{ cursor: "pointer" }}
@@ -74,7 +75,7 @@ function Nav() {
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPUaScBRr4QoERIzGLbRQMXchNefz6Ajx0nQ&usqp=CAU"
                   />
                 </div>
-                <a href="/">
+                <a href="/Puma">
                   <div
                     className="card-footer d-flex"
                     style={{ cursor: "pointer" }}
@@ -98,7 +99,7 @@ function Nav() {
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIgSrKfr_ywl0WjpncSY4asVwkL84wsxRH1d7il4wU5cL_qVs95UoQUsEGEg1MysweLIA&usqp=CAU"
                   />
                 </div>
-                <a href="/">
+                <a href="/Piero">
                   <div
                     className="card-footer d-flex"
                     style={{ cursor: "pointer" }}
@@ -122,7 +123,7 @@ function Nav() {
                     src="https://logodix.com/logo/1832706.jpg"
                   />
                 </div>
-                <a href="/">
+                <a href="/Superga">
                   <div
                     className="card-footer d-flex"
                     style={{ cursor: "pointer" }}

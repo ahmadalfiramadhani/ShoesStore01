@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Catatan from "./Catatan";
+import Kon from "./KonKon";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const apiURL = "http://localhost:3004/users/";
@@ -184,18 +185,27 @@ class Footer extends Component {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://www.nike.com/id/"
+                  href="https://www.adidas.co.id/"
                 >
-                  Nike
+                  Adidas
                 </a>
               </p>
               <p>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://www.adidas.co.id/"
+                  href="https://www.vans.com/"
                 >
-                  Adidas
+                  Vans
+                </a>
+              </p>
+              <p>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://pieroindonesia.com/"
+                >
+                  Piero
                 </a>
               </p>
               <p>
@@ -211,26 +221,24 @@ class Footer extends Component {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://www.vans.com/"
+                  href="https://superga.id/"
                 >
-                  Vans
+                  Superga
                 </a>
               </p>
             </MDBCol>
             <hr className="w-100 clearfix d-md-none" />
             <MDBCol md="4" lg="4" xl="4" className="mx-auto mt-3">
               <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
-              <p>
-                <i className="fa fa-home mr-3" />4 Chome-24-14 Jingumae, Shibuya
-                City, Tokyo 150-0001, Jepang
-              </p>
-              <p>
-                <i className="fa fa-envelope mr-3" /> shoefantasy@gmail.com
-              </p>
-              <p>
-                <i className="fa fa-phone-alt mr-3" />
-                +81 3-3405-6671
-              </p>
+              {this.state.dataUser.map((dataUser) => {
+                return (
+                  <Kon
+                    key={dataUser.id}
+                    data={dataUser}
+                    update={this.HendelUpdate} // Pemanggilan Hendel Update
+                  />
+                );
+              })}
             </MDBCol>
             <hr className="w-100 clearfix d-md-none" />
             <MDBCol md="3" lg="2" xl="2" className="mx-auto mt-3">

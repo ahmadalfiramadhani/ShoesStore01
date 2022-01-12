@@ -1,147 +1,185 @@
-import React from "react";
+import React, { Component } from "react";
 import "../assets/css/Sidebar.css";
 import Navbar from "./Navbar";
+import Kat from "./kat";
+import { Row } from "react-bootstrap";
 
-function Nav() {
-  return (
-    <div className="body main">
-      <Navbar />
+const apiURL = "http://localhost:3004/products/";
 
-      {/* Content*/}
-      <main className="mt-5 pt-3">
-        <div className="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item active" aria-current="page">
-                <strong>Products</strong>
-              </li>
-            </ol>
-          </nav>
-          <div className="row">
-            <div className="col-md-3 mb-3">
-              <div className="card">
-                <div className="card-body">
-                  <img
-                    alt="Adidas Detail"
-                    height="120px"
-                    width="250px"
-                    src="https://www.transparentpng.com/thumb/adidas-logo/png-photo-adidas-logo-hd-6.png"
+class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataUser: [], // Untuk tampung Get all data
+      totalData: 0, // Untuk Hitung All Data
+      isUpdate: false, // Untuk Fileter Fungsi
+      Notif: {
+        // Untuk Tampung respon Dari Server
+        alertShow: false,
+        actionType: "",
+        responCode: 0,
+      },
+      DataUserNew: {
+        // untuk Tampung data Update / New data
+        id: 1,
+        nama: "",
+        deskripsi: "",
+      },
+    };
+  }
+
+  componentDidMount() {
+    this.GetdataUsers();
+  }
+
+  GetdataUsers() {
+    fetch(apiURL)
+      .then((res) => {
+        if (res.status === 200) return res.json();
+        else return <p>No data Found</p>;
+      })
+      .then((resdata) => {
+        console.log(resdata);
+        // console.log('Numrow', resdata.length)
+        this.setState({
+          dataUser: resdata,
+          totalData: resdata.length,
+        });
+      });
+  }
+  SaveNewDataUSer = () => {
+    const Newdata = this.state.DataUserNew;
+
+    fetch(apiURL, {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(Newdata),
+    }).then((res) => {
+      console.log(res);
+      console.log("Status Create", res.status);
+
+      // Untuk Tampung respon Dari Server
+      this.setState({
+        Notif: {
+          alertShow: true,
+          actionType: "created",
+          responCode: res.status,
+        },
+      });
+
+      this.GetdataUsers();
+      this.ClearForm();
+    });
+  };
+  UpdateDataUser = () => {
+    const dataUpdate = this.state.DataUserNew;
+    const id = dataUpdate.id;
+
+    fetch(apiURL + id, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataUpdate),
+    }).then((res) => {
+      console.log(res);
+      console.log("Status Update", res.status);
+
+      // Untuk Tampung respon Dari Server
+      this.setState({
+        Notif: {
+          alertShow: true,
+          actionType: "updated",
+          responCode: res.status,
+        },
+      });
+
+      this.GetdataUsers();
+      this.ClearForm();
+    });
+  };
+  HendelOnchange = (event) => {
+    // console.log('Form Change')
+    const NumberingId = this.state.totalData + 1; // Untuk ID New Data
+    let prmInputUser = { ...this.state.DataUserNew }; // Copy State
+    if (!this.state.isUpdate) {
+      //Cek Jika Update Data Idnya Tidak Di Ubah
+      prmInputUser["id"] = NumberingId;
+    }
+    prmInputUser[event.target.name] = event.target.value;
+    this.setState({
+      DataUserNew: prmInputUser,
+    });
+  };
+  ClearForm = () => {
+    this.setState({
+      isUpdate: false,
+      DataUserNew: {
+        id: 1,
+        nama: "",
+        deskripsi: "",
+      },
+    });
+
+    // Mengembalikan Nilai Awal Notif
+    setInterval(() => {
+      this.setState({
+        Notif: {
+          alertShow: false,
+          actionType: "",
+          responCode: 0,
+        },
+      });
+    }, 4500);
+  };
+  HendelSimpan = () => {
+    if (this.state.isUpdate) {
+      this.UpdateDataUser();
+    } else {
+      this.SaveNewDataUSer();
+    }
+  };
+  HendelUpdate = (data) => {
+    console.log("Update id", data.id);
+    console.log("Update arry", data);
+    this.setState({
+      DataUserNew: data,
+      isUpdate: true,
+    });
+  };
+
+  render() {
+    return (
+      <div className="body main">
+        <Navbar />
+
+        {/* Content*/}
+        <main className="mt-5 pt-3">
+          <div className="container">
+            <h3>
+              <center>
+                <strong>Produk</strong>
+              </center>
+            </h3>
+            <Row className="overflow-auto menu">
+              {this.state.dataUser.map((dataUser) => {
+                return (
+                  <Kat
+                    key={dataUser.id}
+                    data={dataUser}
+                    update={this.HendelUpdate} // Pemanggilan Hendel Update
                   />
-                </div>
-                <a href="/">
-                  <div
-                    className="card-footer d-flex"
-                    style={{ cursor: "pointer" }}
-                  >
-                    View Details
-                    <span className="ms-auto">
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 mb-3">
-              <div className="card">
-                <div className="card-body">
-                  <img
-                    alt="Vans Detail"
-                    height="120px"
-                    width="238px"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4DCP-wyMlhgTms3FZgZ58Xi5Lds4aHZIy2g&usqp=CAU"
-                  />
-                </div>
-                <a href="/">
-                  <div
-                    className="card-footer d-flex"
-                    style={{ cursor: "pointer" }}
-                  >
-                    View Details
-                    <span className="ms-auto">
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-3 mb-3">
-              <div className="card">
-                <div className="card-body">
-                  <img
-                    alt="Puma Detail"
-                    height="120px"
-                    width="238px"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPUaScBRr4QoERIzGLbRQMXchNefz6Ajx0nQ&usqp=CAU"
-                  />
-                </div>
-                <a href="/">
-                  <div
-                    className="card-footer d-flex"
-                    style={{ cursor: "pointer" }}
-                  >
-                    View Details
-                    <span className="ms-auto">
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            {/* superga */}
-            <div className="col-md-3 mb-3">
-              <div className="card">
-                <div className="card-body">
-                  <img
-                    style={{ marginLeft: "-10px" }}
-                    alt="Piero Detail"
-                    height="120px"
-                    width="248px"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIgSrKfr_ywl0WjpncSY4asVwkL84wsxRH1d7il4wU5cL_qVs95UoQUsEGEg1MysweLIA&usqp=CAU"
-                  />
-                </div>
-                <a href="/">
-                  <div
-                    className="card-footer d-flex"
-                    style={{ cursor: "pointer" }}
-                  >
-                    View Details
-                    <span className="ms-auto">
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            {/* piero */}
-            <div className="col-md-3 mb-3">
-              <div className="card">
-                <div className="card-body">
-                  <img
-                    style={{ marginLeft: "-15px" }}
-                    alt="Superga Detail"
-                    height="120px"
-                    width="250px"
-                    src="https://logodix.com/logo/1832706.jpg"
-                  />
-                </div>
-                <a href="/">
-                  <div
-                    className="card-footer d-flex"
-                    style={{ cursor: "pointer" }}
-                  >
-                    View Details
-                    <span className="ms-auto">
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </div>
+                );
+              })}
+            </Row>
           </div>
-        </div>
-      </main>
-    </div>
-  );
+        </main>
+      </div>
+    );
+  }
 }
-
 export default Nav;

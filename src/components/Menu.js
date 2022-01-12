@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckCircle,
   faListAlt,
-  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Nav() {
@@ -37,17 +36,6 @@ function Nav() {
                   <FontAwesomeIcon icon={faListAlt} size="md" />
                   {"  "}
                   Daftar Order
-                  <span
-                    style={{
-                      marginLeft: "750px",
-                      padding: "6px",
-                      borderRadius: "2px",
-                      fontSize: "15px",
-                      backgroundColor: "orangered",
-                    }}
-                  >
-                    <FontAwesomeIcon icon={faSearch} /> FILTER DATA
-                  </span>
                 </Card.Title>
               </Card.Header>
               <Card.Body>
@@ -95,8 +83,6 @@ function Nav() {
                       <th>{"  "}</th>
                       <th>No</th>
                       <th>Nama Pembeli</th>
-                      <th>Nama Produc</th>
-                      <th>Jumlah</th>
                       <th>Total</th>
                       <th>Konfirm</th>
                       <th>Status</th>
@@ -113,8 +99,6 @@ function Nav() {
                       </td>
                       <td>1</td>
                       <td>Layla</td>
-                      <td>Adidas</td>
-                      <td>2</td>
                       <td>200.000</td>
                       <td>
                         <Button variant="success">KONFIRM</Button>
