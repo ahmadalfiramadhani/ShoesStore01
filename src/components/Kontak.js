@@ -186,7 +186,7 @@ class Nav extends Component {
                       controlId="formHorizontalEmail"
                     >
                       <Form.Label column sm={2}>
-                        <strong>Alamat</strong>
+                        <strong>Alamat :</strong>
                       </Form.Label>
                       <Col sm={10}>
                         <Form.Control
@@ -205,7 +205,7 @@ class Nav extends Component {
                       controlId="formHorizontalEmail"
                     >
                       <Form.Label column sm={2}>
-                        <strong>No.Telpon</strong>
+                        <strong>No.Telpon :</strong>
                       </Form.Label>
                       <Col sm={10}>
                         <Form.Control
@@ -224,7 +224,7 @@ class Nav extends Component {
                       controlId="formHorizontalEmail"
                     >
                       <Form.Label column sm={2}>
-                        <strong>Email</strong>
+                        <strong>Email :</strong>
                       </Form.Label>
                       <Col sm={10}>
                         <Form.Control

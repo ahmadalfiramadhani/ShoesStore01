@@ -90,7 +90,7 @@ export default class TambahMenu extends Component {
                       &emsp;<Col sm="8">
                         <select className="form-select">
                           <option disabled selected>
-                            -Pilih Kategori-
+                            -~`Pilih Kategori`~-
                           </option>
                           <option>Adidas</option>
                           <option>Piero</option>
