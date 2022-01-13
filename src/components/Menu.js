@@ -10,16 +10,21 @@ import {
 
 function Nav() {
   return (
-    <div className="body main">
+    <div className="body main" style={{ backgroundColor: "gray" }}>
       <Navbar />
 
       {/* Content*/}
       <main className="mt-5 pt-3">
         <div className="container">
+          <h4>
+              <center>
+                  <strong>DATA ORDER</strong>
+                  <hr />
+              </center>
+          </h4>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item active" aria-current="page">
-                <strong>ORDER</strong>
               </li>
             </ol>
           </nav>
@@ -38,7 +43,7 @@ function Nav() {
                   Daftar Order
                 </Card.Title>
               </Card.Header>
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: "Lavender" }}>
                 <Row>
                   <Col>
                     <select
@@ -47,6 +52,7 @@ function Nav() {
                       style={{
                         width: "2cm",
                         padding: "5px 0px 5px 9px",
+                        color: "red",
                       }}
                     >
                       <option selected>0</option>
@@ -63,22 +69,23 @@ function Nav() {
                     </select>
                   </Col>
                   <Col>
-                    <span style={{ marginLeft: "290px" }}>
-                      Cari Data:{" "}
+                    <span style={{ marginLeft: "290px", color: "red" }}>
+                      Cari Data :{" "}
                       <input
                         type="text"
                         style={{
                           width: "3cm",
                           height: "0.9cm",
                           padding: "0px 10px 0px 10px",
+                          color: "red"
                         }}
                       />
                     </span>
                   </Col>
                 </Row>
                 <br />
-                <Table striped bordered hover className="text-center">
-                  <thead>
+                <Table striped bordered hover className="text-center" style={{ color: "red" }}>
+                  <thead className="ter" style={{ color: "red" }}>
                     <tr>
                       <th>{"  "}</th>
                       <th>No</th>
@@ -88,7 +95,7 @@ function Nav() {
                       <th>Status</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="cen" style={{ color: "red" }}>
                     <tr>
                       <td>
                         {" "}

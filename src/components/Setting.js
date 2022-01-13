@@ -163,7 +163,7 @@ class Crud extends Component {
 
   render() {
     return (
-      <div className="body main">
+      <div className="body main" style={{ backgroundColor: "gray" }}>
         <Navbar />
         <Container>
           <main className="mt-5 pt-3">
@@ -182,8 +182,8 @@ class Crud extends Component {
                       className="mb-3"
                       controlId="formHorizontalPassword"
                     >
-                      <Form.Label column sm={2}>
-                        <strong>Nama App</strong>
+                      <Form.Label column sm={2} style={{ Color: "red" }}>
+                        <strong>Nama App :</strong>
                       </Form.Label>
                       <Col sm={10}>
                         <Form.Control
@@ -203,7 +203,7 @@ class Crud extends Component {
                       controlId="formHorizontalEmail"
                     >
                       <Form.Label column sm={2}>
-                        <strong>Deskripsi</strong>
+                        <strong>Deskripsi :</strong>
                       </Form.Label>
                       <Col sm={10}>
                         <Form.Control

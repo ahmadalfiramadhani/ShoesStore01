@@ -164,7 +164,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <div className="body main">
+      <div className="body main" style={{ backgroundColor: "gray" }}>
         <Navbar />
 
         {/* Content*/}

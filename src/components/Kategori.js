@@ -154,17 +154,18 @@ class Nav extends Component {
 
   render() {
     return (
-      <div className="body main">
+      <div className="body main" style={{ backgroundColor: "gray" }}>
         <Navbar />
 
         {/* Content*/}
         <main className="mt-5 pt-3">
           <div className="container">
-            <h3>
+            <h4>
               <center>
                 <strong>Produk</strong>
+                <hr />
               </center>
-            </h3>
+            </h4>
             <Row className="overflow-auto menu">
               {this.state.dataUser.map((dataUser) => {
                 return (

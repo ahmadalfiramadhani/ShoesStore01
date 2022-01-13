@@ -6,18 +6,19 @@ import Navbar from "./Navbar";
 
 function Nav() {
   return (
-    <div className="body main">
+    <div className="body main" style={{ backgroundColor: "gray" }}>
       <Navbar />
 
       {/* Content*/}
       <main className="mt-5 pt-3">
         <div className="container">
           {/* <Slide /> */}
-          <h3>
+          <h4>
             <center>
               <strong>Dashboard</strong>
+              <hr />
             </center>
-          </h3>
+          </h4>
           <div className="row">
             <div className="col-md-3 mb-3">
               <div className="card">

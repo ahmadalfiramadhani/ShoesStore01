@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default class TambahMenu extends Component {
   render() {
   return (
-    <div className="body main">
+    <div className="body main" style={{ backgroundColor: "gray" }}>
       <Navbar />
 
       {/* Content*/}
@@ -36,7 +36,7 @@ export default class TambahMenu extends Component {
                 <FontAwesomeIcon icon={faDotCircle} /> Form Tambah Menu
               </Card.Title>
             </Card.Header>
-            <Card.Body>
+            <Card.Body style={{ backgroundColor: "Lavender" }}>
               <Row>
                 <Col>
                   <Form>
@@ -44,12 +44,15 @@ export default class TambahMenu extends Component {
                       as={Row}
                       className="mb-3"
                       controlId="formPlaintextEmail"
+                      style={{ color: "red" }}
                     >
-                      <Form.Label column sm="2" style={{ textAlign: "right" }}>
-                        Nama Barang
+                      <Form.Label column sm="4" style={{ textAlign: "right" }}>
+                        Nama Barang :
                       </Form.Label>
-                      <Col sm="10">
-                        <Form.Control type="text" />
+                      &emsp;<Col sm="10">
+                        <Form.Control 
+                        type="text"
+                        placeholder="Nama Barang..." />
                       </Col>
                     </Form.Group>
 
@@ -57,15 +60,17 @@ export default class TambahMenu extends Component {
                       as={Row}
                       className="mb-3"
                       controlId="formPlaintextPassword"
+                      style={{ color: "red" }}
                     >
-                      <Form.Label column sm="2" style={{ textAlign: "right" }}>
-                        Deskripsi
+                      <Form.Label column sm="3" style={{ textAlign: "right" }}>
+                        Deskripsi :
                       </Form.Label>
-                      <Col sm="10">
+                      &emsp;<Col sm="10">
                         <Form.Control
                           type="text"
+                          placeholder="Deskripsi..."
                           as="textarea"
-                          style={{ height: "300px" }}
+                          style={{ height: "100px" }}
                         />
                       </Col>
                     </Form.Group>
@@ -77,11 +82,12 @@ export default class TambahMenu extends Component {
                       as={Row}
                       className="mb-3"
                       controlId="formPlaintextEmail"
+                      style={{ color: "red" }}
                     >
-                      <Form.Label column sm="2" style={{ textAlign: "right" }}>
-                        Kategori
+                      <Form.Label column sm="3" style={{ textAlign: "right" }}>
+                        Kategori :
                       </Form.Label>
-                      <Col sm="10">
+                      &emsp;<Col sm="8">
                         <select className="form-select">
                           <option disabled selected>
                             -Pilih Kategori-
@@ -100,12 +106,15 @@ export default class TambahMenu extends Component {
                       as={Row}
                       className="mb-3"
                       controlId="formPlaintextPassword"
+                      style={{ color: "red" }}
                     >
-                      <Form.Label column sm="2" style={{ textAlign: "right" }}>
-                        Harga
+                      <Form.Label column sm="3" style={{ textAlign: "right" }}>
+                        Harga :
                       </Form.Label>
-                      <Col sm="5">
-                        <Form.Control type="number" />
+                      &emsp;<Col sm="5">
+                        <Form.Control 
+                        type="number"
+                        placeholder="Harga..." />
                       </Col>
                     </Form.Group>
 
@@ -113,12 +122,15 @@ export default class TambahMenu extends Component {
                       as={Row}
                       className="mb-3"
                       controlId="formPlaintextPassword"
+                      style={{ color: "red" }}
                     >
-                      <Form.Label column sm="2" style={{ textAlign: "right" }}>
-                        Upload Foto
+                      <Form.Label column sm="4" style={{ textAlign: "right" }}>
+                        Upload Foto :
                       </Form.Label>
-                      <Col sm="10">
-                        <Form.Control type="file" />
+                      &emsp;<Col sm="10">
+                        <Form.Control 
+                        type="file"
+                        placeholder="Upload Foto..." />
                       </Col>
                     </Form.Group>
 
